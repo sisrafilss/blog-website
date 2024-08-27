@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Blog Website</title>
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body class="bg-gray-100">
-
-  <!-- Navigation Panel -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+     <!-- Navigation Panel -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
@@ -37,7 +36,7 @@
                 <a href="index.html" class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-lg font-semibold">Home</a>
                 <a href="createPost.html" class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-lg font-semibold">Create Post</a>
                 <a href="manageBlog.html" class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-lg font-semibold">Manage Blogs</a>
-                <a href="contact.html" class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-lg font-semibold">Contact</a>
+                <a href="#" class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-lg font-semibold">Contact</a>
             </div>
         </div>
     </div>
@@ -52,75 +51,47 @@
         </div>
     </div>
 </nav>
+    <!-- Contact Us Section -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Heading -->
+        <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">Contact Us</h2>
+        <p class="text-lg text-gray-600 text-center mb-12">We'd love to hear from you! Whether you have a question about our content, collaboration opportunities, or anything else, our team is ready to answer all your questions.</p>
 
-
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Latest Blogs</h2>
-
-        <!-- Blog Cards Container -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Blog Card 1 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 1" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 1</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="singleBlog.html" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
+        <!-- Form Container -->
+        <form class="bg-white shadow-md rounded-lg p-8 space-y-6">
+            <!-- Name Field -->
+            <div>
+                <label for="name" class="block text-gray-700 text-lg font-medium mb-2">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
             </div>
 
-            <!-- Blog Card 2 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 2" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 2</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
+            <!-- Email Field -->
+            <div>
+                <label for="email" class="block text-gray-700 text-lg font-medium mb-2">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
             </div>
 
-            <!-- Blog Card 3 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 3" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 3</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
+            <!-- Message Field -->
+            <div>
+                <label for="message" class="block text-gray-700 text-lg font-medium mb-2">Your Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required></textarea>
             </div>
 
-            <!-- Blog Card 4 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 4" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 4</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="w-full sm:w-auto bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Send Message
+                </button>
             </div>
+        </form>
+    </section>
 
-            <!-- Blog Card 5 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 5" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 5</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Blog Card 6 -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 6" class="w-full h-48 object-cover"> -->
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 6</h3>
-                    <p class="text-gray-600 mb-4">This is a brief description of the blog post. It gives an overview of the content to engage readers.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-400 font-medium">Read More &rarr;</a>
-                </div>
-            </div>
-
-        </div>
+    <!-- Contact Information Section -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Reach Out to Us</h3>
+        <p class="text-lg text-gray-600 mb-4">Email: <a href="mailto:contact@yourblog.com" class="text-indigo-600 hover:underline">contact@yourblog.com</a></p>
+        <p class="text-lg text-gray-600 mb-4">Phone: <a href="tel:+1234567890" class="text-indigo-600 hover:underline">+1 (234) 567-890</a></p>
+        <p class="text-lg text-gray-600">Address: 123 Blog Street, Content City, Blogland</p>
     </section>
 
     <!-- Footer Section -->
@@ -166,20 +137,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Toggle mobile menu and switch icons
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-    </script>
 
 </body>
 </html>
