@@ -36,7 +36,7 @@ app.get("/create-post", (req, res) => {
 });
 
 app.get("/manage-blogs", (req, res) => {
-  res.render("manageBlog.ejs");
+  res.render("manageBlog.ejs", {blogs});
 });
 
 app.get("/contact", (req, res) => {

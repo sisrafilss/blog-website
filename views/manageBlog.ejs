@@ -1,21 +1,25 @@
 <%- include("partials/header.ejs") %>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+  <% if (locals.blogs.length) { %>
   <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
-    Manage Blogs
+    Latest Blogs
   </h2>
+  <% } %>
 
   <!-- Blog Cards Container -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% if (locals.blogs.length) { %> <% blogs.forEach(blog => {%>
+
     <!-- Blog Card 1 -->
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
       <!-- <img src="https://via.placeholder.com/300x200" alt="Blog Image 1" class="w-full h-48 object-cover"> -->
       <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Title 1</h3>
-        <p class="text-gray-600 mb-4">
-          This is a brief description of the blog post. It gives an overview of
-          the content to engage readers.
-        </p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          <%= blog.title %>
+        </h3>
+        <p class="text-gray-600 mb-4"><%= blog.post.slice(0, 100) %>[...]</p>
 
         <!-- Button Container -->
         <div class="flex space-x-4">
@@ -42,6 +46,12 @@
         </div>
       </div>
     </div>
+
+    <% }) %> <% } else { %>
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+        NO BLOG TO SHOW
+      </h2>
+      <% } %>
   </div>
 </section>
 
