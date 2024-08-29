@@ -16,12 +16,12 @@
         <h3 class="text-xl font-semibold text-gray-800 mb-2">
           <%= blog.title %>
         </h3>
-        <p class="text-gray-600 mb-4"><%= blog.post.slice(0, 100) %>[...]</p>
-        <a
-          href="singleBlog.html"
+        <p class="text-gray-600 mb-4"><%= blog.post %> </p>
+        <!-- <a
+          href=<%= "blogs/" + blog.id %>
           class="text-indigo-600 hover:text-indigo-400 font-medium"
           >Read More &rarr;</a
-        >
+        > -->
       </div>
     </div>
     <% }) %> <% } else { %>

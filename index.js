@@ -6,6 +6,8 @@ const port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
 
 // blogs as database
 const blogs = [
@@ -36,12 +38,14 @@ app.get("/create-post", (req, res) => {
 });
 
 app.get("/manage-blogs", (req, res) => {
-  res.render("manageBlog.ejs", {blogs});
+  res.render("manageBlog.ejs", { blogs });
 });
+
 
 app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
+
 
 app.listen(port, () => {
   console.log(`App running on port: ${port}`);
