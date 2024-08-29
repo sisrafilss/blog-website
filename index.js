@@ -55,16 +55,32 @@ app.post("/new-post", (req, res) => {
     new Date().getTime().toString() +
     Math.random().toString(36).substring(2, 10);
   blogs.push({ id: uniqueId, ...newBlog });
-  res.render("postAdded");
+  res.render("index.ejs", {blogs});
 
   // res.render("contact.ejs");
 });
 
 // deleting an existing blog
-app.post("/delete-post/:id", async (req, res) => {
+app.post("/delete-post/:id", (req, res) => {
   const blogId = req.params.id;
   const deleteBlogIndex = blogs.findIndex((blog) => blog.id === blogId);
   blogs.splice(deleteBlogIndex, 1);
+  res.render("manageBlog.ejs", { blogs });
+});
+
+// edit post (get)
+app.get("/edit/:id", (req, res) => {
+  const blogId = req.params.id;
+  const blog = blogs.find(blg => blg.id === blogId);
+  res.render("editPost.ejs", { blog });
+});
+
+// edit post (POST)
+app.post("/edit/:id", (req, res) => {
+  const updatedBlog = req.body;
+  const blogId = req.params.id;
+  const blogIndex = blogs.findIndex(blog => blog.id === blogId);
+  blogs.splice(blogIndex, 1, updatedBlog)
   res.render("manageBlog.ejs", { blogs });
 });
 
