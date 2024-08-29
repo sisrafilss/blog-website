@@ -1,7 +1,6 @@
 <%- include("partials/header.ejs") %>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
   <% if (locals.blogs.length) { %>
   <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
     Latest Blogs
@@ -19,7 +18,7 @@
         <h3 class="text-xl font-semibold text-gray-800 mb-2">
           <%= blog.title %>
         </h3>
-        <p class="text-gray-600 mb-4"><%= blog.post %> </p>
+        <p class="text-gray-600 mb-4"><%= blog.post %></p>
 
         <!-- Button Container -->
         <div class="flex space-x-4">
@@ -38,20 +37,27 @@
           </button>
 
           <!-- Delete Button -->
-          <button
-            class="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-offset-2"
+          <form
+            action="/delete-post/<%= blog.id %>"
+            ?_method="DELETE"
+            method="POST"
           >
-            Delete
-          </button>
+            <button
+              type="submit"
+              class="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-offset-2"
+            >
+              Delete
+            </button>
+          </form>
         </div>
       </div>
     </div>
 
     <% }) %> <% } else { %>
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
-        NO BLOG TO SHOW
-      </h2>
-      <% } %>
+    <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
+      NO BLOG TO SHOW
+    </h2>
+    <% } %>
   </div>
 </section>
 
