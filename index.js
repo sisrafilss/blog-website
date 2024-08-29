@@ -46,6 +46,14 @@ app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
 
+app.post("/new-post", (req, res) => {
+  const newBlog = req.body;
+  blogs.push(newBlog);
+  res.render("postAdded")
+
+  // res.render("contact.ejs");
+});
+
 
 app.listen(port, () => {
   console.log(`App running on port: ${port}`);
